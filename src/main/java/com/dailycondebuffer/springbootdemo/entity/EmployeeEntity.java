@@ -1,15 +1,17 @@
-package com.dailycondebuffer.springbootdemo.model;
+package com.dailycondebuffer.springbootdemo.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-//@JsonIgnoreProperties({"department"})
-public class Employee {
+@Entity
+@Table(name ="tab_employee")
+public class EmployeeEntity {
+    @Id
     private String employeeId;
     private String firstName;
     private String lastName;
     private String emailId;
-    //@JsonIgnore
     private String department;
 
     public String getEmployeeId() {
